@@ -1,10 +1,19 @@
 # OnlineRegistration
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0. This is a Online Registration interface that allows a user to be created and a list of users to be displayed.
 
-## Development server
+## Prerequisites
+1. Angular
+2. Npm
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Development server (Run on local)
+1. Navigate to project root
+2. Run 'npm install'
+3. Run 'ng build'
+4. Run 'ng serve --open' to deploy the application
+5. The app should automatically open in your default browser but if it doesnt you can navigate to 'http://localhost:4200/' 
+
+Note: The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
