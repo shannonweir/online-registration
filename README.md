@@ -1,4 +1,4 @@
-# OnlineRegistration
+# Online Registration Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0. This is a Online Registration interface that allows a user to be created and a list of users to be displayed.
 
