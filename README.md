@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Angular:lastest
 2. Npm
 
-## Development server (Run on local)
+## Development server (Run in local)
 1. Navigate to project root
 2. Run 'npm install'
 3. Run 'ng build'
