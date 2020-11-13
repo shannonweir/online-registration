@@ -1,0 +1,73 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm, successDialog)">
+
+    <ng-template #successDialog>
+        <h2 matDialogTitle>Registration Success</h2>
+        <p matDialogContent><em>You have successfully registered.</em></p>
+        <mat-dialog-actions>
+            <button mat-button matDialogClose class="btn btn-success">Close</button>
+        </mat-dialog-actions>
+    </ng-template>
+
+    <div *ngIf="error" class="alert alert-danger">
+        {{error}}
+    </div>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" name="name" class="form-control" required minlength="2" [(ngModel)]="user.name" #name="ngModel"
+            pattern="^[a-zA-Z- ]*$">
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+                Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+                Name must be at least 2 characters long.
+            </div>
+            <div *ngIf="name.errors.pattern">
+                Name can only contain letters, dashes and spaces.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="idNumber">ID Number</label>
+        <input type="text" class="form-control" id="idNumber" required [(ngModel)]="user.idNumber" name="idNumber"
+            #idNumber="ngModel" required minlength="13" maxlength="13"
+            pattern="(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))" />
+        <div *ngIf="idNumber.invalid && (idNumber.dirty || idNumber.touched)" class="alert alert-danger">
+            <div *ngIf="idNumber.errors.required">
+                ID number is required.
+            </div>
+            <div *ngIf="idNumber.errors.minlength">
+                ID number must be 13 numbers.
+            </div>
+            <div *ngIf="idNumber.errors.maxlength">
+                ID number must be 13 numbers.
+            </div>
+            <div *ngIf="idNumber.errors.pattern">
+                ID number invalid.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="telephoneNumber">Telephone Number</label>
+        <input type="text" class="form-control" id="telephoneNumber" required [(ngModel)]="user.telephoneNumber"
+            name="telephoneNumber" #telephoneNumber="ngModel" maxlength="10" pattern="^[0-9]{10}$" />
+        <div *ngIf="telephoneNumber.invalid && (telephoneNumber.dirty || telephoneNumber.touched)"
+            class="alert alert-danger">
+            <div *ngIf="telephoneNumber.errors.required">
+                Telephone number is required.
+            </div>
+            <div *ngIf="telephoneNumber.errors.maxlength">
+                Telephone number must be 10 digits long.
+            </div>
+            <div *ngIf="telephoneNumber.errors.pattern">
+                Telephone number must contain 10 digits only.
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Submit</button>
+</form>

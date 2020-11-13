@@ -1,0 +1,30 @@
+<div ng-controller="Ctrl">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Id Numnber
+                </th>
+                <th>
+                    Full Name
+                </th>
+                <th>
+                    Telephone Number
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>
+                    {{user.idNumber}}
+                </td>
+                <td>
+                    {{user.name}}
+                </td>
+                <td>
+                    {{user.telephoneNumber}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
